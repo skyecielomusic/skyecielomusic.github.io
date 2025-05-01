@@ -1,3 +1,9 @@
+<script>
+    // If user lands here directly (not through JS SPA)
+    if (window.top === window.self) {
+      window.location.replace('/');
+    }
+</script>
 <h2>Roster</h2>
 <p>These are all the artists currently in our rotation.  Each artist volunteers to participate in our station in various ways.  The roster is refreshed each month allotting for new artists while retaining those who continue to be active with us.</p>
 <div id="artistTable"></div>
