@@ -1,35 +1,28 @@
 async function loadRoster() {
   try {
-    const response = await fetch('data/playlist.json', { cache: 'no-store' });
-    const playlist = await response.json();
+    const response = await fetch('data/roster.json', { cache: 'no-store' });
+    const roster = await response.json();
 
-    let cleanedArtists = {};
-    playlist.forEach(item => {
-      let name = item.artist.trim();
-      name = name.split(/\s*(ft|feat|featuring)\.?\s+/i)[0].trim();
-      name = name.split(',')[0].trim();
-      let normalized = name.toLowerCase();
-      if (normalized.endsWith('s')) {
-        normalized = normalized.slice(0, -1);
-      }
-      if (!cleanedArtists[normalized]) {
-        cleanedArtists[normalized] = name;
-      }
-    });
-
-    let artists = Object.values(cleanedArtists);
-    artists.sort((a, b) => a.localeCompare(b));
-
-    const midIndex = Math.ceil(artists.length / 2);
-    const leftColumn = artists.slice(0, midIndex);
-    const rightColumn = artists.slice(midIndex);
+    const midIndex = Math.ceil(roster.length / 2);
+    const leftColumn = roster.slice(0, midIndex);
+    const rightColumn = roster.slice(midIndex);
 
     let tableHTML = '<table id="rosterTable"><tbody>';
 
     for (let i = 0; i < midIndex; i++) {
       tableHTML += '<tr>';
-      tableHTML += `<td class="artist-cell">${leftColumn[i] || ''}</td>`;
-      tableHTML += `<td class="artist-cell">${rightColumn[i] || ''}</td>`;
+
+      let leftColumnValue = leftColumn[i].name
+      if (leftColumn[i].website) {
+        leftColumnValue = `<a href="${leftColumn[i].website}" target="_blank">${leftColumn[i].name}</a>`
+      }
+      tableHTML += `<td class="artist-cell">${leftColumnValue || ''}</td>`;
+
+      let rightColumnValue = rightColumn[i].name
+      if (rightColumn[i].website) {
+        rightColumnValue = `<a href="${rightColumn[i].website}" target="_blank">${rightColumn[i].name}</a>`
+      }
+      tableHTML += `<td class="artist-cell">${rightColumnValue || ''}</td>`;
       tableHTML += '</tr>';
     }
 
