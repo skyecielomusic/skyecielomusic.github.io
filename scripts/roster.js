@@ -15,12 +15,16 @@ async function loadRoster() {
       let leftColumnValue = leftColumn[i].name
       if (leftColumn[i].website) {
         leftColumnValue = `<a href="${leftColumn[i].website}" target="_blank">${leftColumn[i].name}</a>`
+      } else {
+        leftColumnValue = `<a href="" target="_blank">${leftColumn[i].name}</a>`
       }
       tableHTML += `<td class="artist-cell">${leftColumnValue || ''}</td>`;
 
       let rightColumnValue = rightColumn[i].name
       if (rightColumn[i].website) {
         rightColumnValue = `<a href="${rightColumn[i].website}" target="_blank">${rightColumn[i].name}</a>`
+      } else {
+        rightColumnValue = `<a href="" target="_blank">${rightColumn[i].name}</a>`
       }
       tableHTML += `<td class="artist-cell">${rightColumnValue || ''}</td>`;
       tableHTML += '</tr>';
