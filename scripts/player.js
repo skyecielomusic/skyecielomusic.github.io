@@ -90,7 +90,7 @@ async function getTrack() {
 function getArtwork(artist, title) {
 //console.log(playlist);
   if (!playlist || !playlist.length) {
-    artwork.src = 'images/SCM.jpg';
+    artwork.src = 'images/SCM-White.png';
     return;
   }
 
@@ -102,7 +102,7 @@ function getArtwork(artist, title) {
   if (track && track.image) {
     artwork.src = imageURL + track.image;
   } else {
-    artwork.src = 'images/SCM.jpg'; // fallback if artwork missing
+    artwork.src = 'images/SCM-White.png'; // fallback if artwork missing
   }
 }
 
