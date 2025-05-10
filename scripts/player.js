@@ -95,7 +95,7 @@ function getArtwork(artist, title) {
   }
 
   const track = playlist.find(item =>
-    item.artist.trim().toLowerCase() === artist.toLowerCase() &&
+    item.author.trim().toLowerCase() === artist.toLowerCase() &&
     item.title.trim().toLowerCase() === title.toLowerCase()
   );
 
