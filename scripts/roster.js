@@ -20,13 +20,16 @@ async function loadRoster() {
       }
       tableHTML += `<td class="artist-cell">${leftColumnValue || ''}</td>`;
 
-      let rightColumnValue = rightColumn[i].name
-      if (rightColumn[i].website) {
-        rightColumnValue = `<a href="${rightColumn[i].website}" target="_blank">${rightColumn[i].name}</a>`
-      } else {
-        rightColumnValue = `<a href="" target="_blank">${rightColumn[i].name}</a>`
+      if (rightColumn[i]) {
+        let rightColumnValue = rightColumn[i].name
+        if (rightColumn[i].website) {
+          rightColumnValue = `<a href="${rightColumn[i].website}" target="_blank">${rightColumn[i].name}</a>`
+        } else {
+          rightColumnValue = `<a href="" target="_blank">${rightColumn[i].name}</a>`
+        }
+        tableHTML += `<td class="artist-cell">${rightColumnValue || ''}</td>`;
       }
-      tableHTML += `<td class="artist-cell">${rightColumnValue || ''}</td>`;
+
       tableHTML += '</tr>';
     }
 
