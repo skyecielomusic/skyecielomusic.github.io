@@ -250,16 +250,6 @@
     "image": "/media/tracks/trackImage579_medium.jpg"
   },
   {
-    "title": "Fork",
-    "author": "Music With A Z",
-    "image": "/media/tracks/trackImage580_medium.jpg"
-  },
-  {
-    "title": "It's In The Eyes",
-    "author": "Music With A Z",
-    "image": "/media/tracks/trackImage187_medium.jpg"
-  },
-  {
     "title": "Bills To Pay",
     "author": "The Stone Hands",
     "image": null
@@ -433,5 +423,30 @@
     "title": "Weightless",
     "author": "Purusa",
     "image": null
+  },
+  {
+    "title": "Freestyle",
+    "author": "Thousand Gardens",
+    "image": "/media/tracks/trackImage591_medium.png"
+  },
+  {
+    "title": "Saskatchewan",
+    "author": "Thousand Gardens",
+    "image": "/media/tracks/trackImage590_medium.png"
+  },
+  {
+    "title": "Bread and Circus",
+    "author": "Thousand Gardens",
+    "image": "/media/tracks/trackImage460_medium.png"
+  },
+  {
+    "title": "If I Died Tomorrow",
+    "author": "Music With A Z",
+    "image": "/media/tracks/trackImage592_medium.jpg"
+  },
+  {
+    "title": "Twenty More Minutes",
+    "author": "Music With A Z",
+    "image": "/media/tracks/trackImage593_medium.jpg"
   }
 ]
