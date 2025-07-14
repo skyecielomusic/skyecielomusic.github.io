@@ -130,6 +130,7 @@ function setArtistName(currentArtist) {
     );
 
     if (entry && entry.website) {
+        artist.textContent = "";
         let link = artist.querySelector("a");
         if (!link) {
             link = document.createElement('a');
