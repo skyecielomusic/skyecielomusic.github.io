@@ -182,6 +182,16 @@ a:hover {
   color: #555;
 }
 
+#artist a {
+  font-size: 14px;
+  color: #555;
+}
+
+#artist a:hover {
+  font-size: 14px;
+  color: #555;
+}
+
 #controls {
   display: flex;
   align-items: center;

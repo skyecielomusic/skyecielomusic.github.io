@@ -43,6 +43,22 @@ async function getPlaylist() {
   }
 }
 
+let roster = [];
+
+async function getRoster() {
+  try {
+    const response = await fetch('data/roster.json');
+    if (!response.ok) throw new Error('Failed to load roster.');
+
+    roster = await response.json();
+//console.log('Roster loaded:', roster);
+
+  } catch (error) {
+//console.error('Error loading roster.json:', error);
+    roster = [];
+  }
+}
+
 async function getTrack() {
   try {
 
@@ -64,7 +80,8 @@ async function getTrack() {
       currentTitle = fullTitle;
     }
 
-    artist.textContent = currentArtist.trim();
+    setArtistName(currentArtist)
+
     title.textContent = currentTitle.trim();
     updateTitleScroll();
 
@@ -106,18 +123,25 @@ function getArtwork(artist, title) {
   }
 }
 
-//function updateTitleScroll() {
-//  const wrapper = document.querySelector('.title-wrapper');
-//  const title = document.getElementById('title');
-//
-////console.log("HERE: " + title.scrollWidth + ", " + wrapper.clientWidth);
-//
-//  if (title.scrollWidth > wrapper.clientWidth) {
-//    title.style.animationPlayState = 'running'; // Start scrolling
-//  } else {
-//    title.style.animationPlayState = 'paused';  // Stay still
-//  }
-//}
+function setArtistName(currentArtist) {
+
+    const entry = roster.find(item =>
+        item.name.trim().toLowerCase() === currentArtist.toLowerCase()
+    );
+
+    if (entry && entry.website) {
+        let link = artist.querySelector("a");
+        if (!link) {
+            link = document.createElement('a');
+        }
+        link.href = entry.website;
+        link.target = '_blank';
+        link.textContent = currentArtist;
+        artist.appendChild(link);
+    } else {
+        artist.textContent = currentArtist.trim();
+    }
+}
 
 function updateTitleScroll() {
   const wrapper = document.querySelector('.title-wrapper');
@@ -139,6 +163,7 @@ function updateTitleScroll() {
 
 async function startPlayer() {
   await getPlaylist();
+  await getRoster();
   await getTrack();
   setInterval(getTrack, interval);
 }
