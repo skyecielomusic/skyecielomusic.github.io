@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Artists Now!",
+    "description": "Artists Now! is an original Skye Cielo Music series spotlighting the artists shaping our sound.\nFeaturing interviews, live performances, in-progress works, exclusive drops, and raw creative insights — direct from the underground.  A weekly broadcast where artists speak in the present tense.",
+    "calendar": {
+      "name": "Artists Now! Weekly Broadcast",
+      "description": "Weekly underground interviews & music from Skye Cielo Music."
+    },
+    "times": [
+      {
+        "day": "Monday",
+        "time": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "time": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "time": "09:00"
+      }
+    ]
+  },
+  {
+    "title": "The Weekly Review",
+    "description": "Join calvolutionaryanimal as he runs through station updates and any notable developments in the indie music world.\nThe boss may also have a thing or two to say...",
+    "calendar": {
+      "name": "The Weekly Review Broadcast",
+      "description": "Weekly station updates from Skye Cielo Music."
+    },
+    "times": [
+      {
+        "day": "Thursday",
+        "time": "01:00"
+      },
+      {
+        "day": "Friday",
+        "time": "16:00"
+      },
+      {
+        "day": "Saturday",
+        "time": "09:00"
+      }
+    ]
+  }
+]
