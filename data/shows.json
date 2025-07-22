@@ -19,11 +19,14 @@
         "day": "Wednesday",
         "time": "09:00"
       }
+    ],
+    "credits": [
+      "Music: \"Sleep\" by <a href='https://www.mitchrocket.com/'>Mitch Rocket</a>"
     ]
   },
   {
     "title": "The Weekly Review",
-    "description": "Join calvolutionaryanimal as he runs through station updates and any notable developments in the indie music world.\nThe boss may also have a thing or two to say...",
+    "description": "Join calvolutionaryanimal for a weekly rundown of station updates, behind-the-scenes developments, and highlights from the indie music world.\nSpecial guests may come and go, some invited and some not...",
     "calendar": {
       "name": "The Weekly Review Broadcast",
       "description": "Weekly station updates from Skye Cielo Music."
@@ -41,6 +44,9 @@
         "day": "Saturday",
         "time": "09:00"
       }
+    ],
+    "credits": [
+      "Music by <a href='http://www.clarkfordmusic.com'>Clark Ford ft. Underground Treehouse</a>"
     ]
   }
 ]

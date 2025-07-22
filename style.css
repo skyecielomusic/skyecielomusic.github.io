@@ -264,3 +264,97 @@ a:hover {
     white-space: nowrap;
   }
 }
+
+.show-card {
+  background: transparent;
+  padding: 12px 20px;
+  margin: 0px auto;          /* ← tiny, positive space */
+  max-width: 700px;
+  text-align: center;
+  box-shadow: none;
+}
+
+#content .show-card .show-header {   /* ID + class → higher specificity */
+  margin: 0 !important;              /* ensure it wins */
+}
+
+.show-header {
+  cursor: pointer;
+  margin: 0;                /* remove default h3 margins */
+  transition: color .15s;
+  color: #0b4c99;
+}
+
+.show-header:hover {
+  color: #5fa0ed;                 /* subtle hover cue */
+}
+
+.show-header::before {
+  content: "▸";                   /* Unicode arrow (looks like ▶︎)   */
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform .2s ease; /* will rotate on open             */
+}
+
+.show-card.open .show-header::before {
+  transform: rotate(90deg);       /* points ▼ */
+}
+
+.details {
+  display: none;            /* collapsed by default */
+  margin-top: 18px;         /* space *inside* the card below the header */
+}
+
+.show-card.open .details {
+  display: block;           /* reveal on click */
+}
+
+/* broadcast‑times list (unchanged, just grouped here for clarity) */
+.broadcast-times {
+  list-style: none;
+  padding-left: 0;
+  font-family: monospace;
+  font-size: 16px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.broadcast-times li {
+  margin: 12px 0;
+  line-height: 1.4;
+}
+
+.local-time {
+  display: block;
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 3px;
+}
+
+.credits-header {
+  margin: 18px 0 8px;
+  font-size: 18px;
+}
+
+.credits-list {
+  list-style: none;
+  padding-left: 0;
+  font-family: monospace;   /* matches broadcast‑times */
+  font-size: 15px;
+  margin: 0;
+  color: #555;
+}
+
+.credits-list li {
+  margin: 6px 0;
+}
+
+.credits-list a {           /* reuse link colours */
+  font-size: 17px;
+  color: #0b4c99;
+}
+
+.credits-list a:hover {
+  font-size: 17px;
+  color: #5fa0ed;
+}

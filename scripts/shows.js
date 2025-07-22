@@ -23,12 +23,28 @@ async function loadShows() {
       const [lead, rest] = show.description.split('\n');
 
       card.innerHTML = `
-        <h3>${show.title}</h3>
-        <p><em>${lead}</em></p>
-        <p>${rest}</p>
-        <h4>Broadcast Times</h4>
-        <ul class="broadcast-times">${timesList}</ul>
+        <h3 class="show-header">${show.title}</h3>
+        <div class="details">
+          <p><em>${lead}</em></p>
+          <p>${rest}</p>
+          <h4>Broadcast Times</h4>
+          <ul class="broadcast-times">${timesList}</ul>
+          ${show.credits && show.credits.length ? `
+            <h4 class="credits-header">Credits</h4>
+            <ul class="credits-list">
+              ${show.credits.map(c => `<li>${c}</li>`).join('')}
+            </ul>
+          ` : ''}
+        </div>
       `;
+
+      const header = card.querySelector('.show-header');
+      header.setAttribute('aria-expanded', 'false');
+
+      header.addEventListener('click', () => {
+        const open = card.classList.toggle('open');
+        header.setAttribute('aria-expanded', open);
+      });
 
       container.appendChild(card);
     });
